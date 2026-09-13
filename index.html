@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Lovelovee Baby ko 🎀</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#ffdcf0;
+    --pink-soft:#FFD6E8;
+    --pink-mid:#ff21cf;
+    --pink-deep:#ff006f;
+    --plum:#ff00a2;
+    --plum-soft:#ff0090;
+    --gold:#FFD166;
+    --white:#FFFFFF;
+    --shadow: 0 12px 30px rgba(66, 15, 37, 0.18);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--plum);
+    font-family:'Quicksand',sans-serif;
+    overflow-x:hidden;
+  }
+  h1,h2,.display{
+    font-family:'Baloo 2',cursive;
+    color:var(--plum);
+    margin:0;
+  }
+  /* ---------- decorative background blobs ---------- */
+  .bg-blob{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(2px);
+    opacity:0.5;
+    z-index:0;
+  }
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:92vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px 20px;
+    background:radial-gradient(circle at 30% 20%, #ff86bf 0%, var(--cream) 55%);
+    overflow:hidden;
+  }
+  .hero-eyebrow{
+    font-size:1.1rem;
+    color:var(--pink-deep);
+    letter-spacing:0.02em;
+    margin-bottom:6px;
+    opacity:0;
+    animation:riseIn 0.8s ease forwards 0.1s;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 8vw, 5.5rem);
+    font-weight:800;
+    line-height:1.05;
+    opacity:0;
+    animation:riseIn 0.9s ease forwards 0.3s;
+  }
+  .hero h1 span{
+    display:block;
+    color:var(--pink-deep);
+    font-size:clamp(3.2rem, 11vw, 7rem);
+    transform:rotate(-2deg);
+  }
+  .hero p.sub{
+    max-width:480px;
+    margin-top:18px;
+    font-size:1.15rem;
+    color:var(--plum-soft);
+    opacity:0;
+    animation:riseIn 0.9s ease forwards 0.55s;
+  }
+  .hero .scroll-hint{
+    margin-top:56px;
+    font-size:0.95rem;
+    color:var(--pink-deep);
+    opacity:0;
+    animation:riseIn 0.9s ease forwards 0.8s, bob 2.6s ease-in-out infinite 1.7s;
+  }
+  @keyframes riseIn{
+    from{opacity:0; transform:translateY(18px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  .petal{
+    position:absolute;
+    font-size:1.6rem;
+    animation:fall linear infinite;
+    opacity:0.85;
+    user-select:none;
+  }
+  @keyframes fall{
+    from{ transform:translateY(-10vh) rotate(0deg); }
+    to{ transform:translateY(110vh) rotate(360deg); }
+  }
+  /* ---------- SECTION HEADERS ---------- */
+  .section{
+    max-width:1100px;
+    margin:0 auto;
+    padding:70px 24px 30px;
+  }
+  .section-head{
+    text-align:center;
+    margin-bottom:44px;
+  }
+  .section-head h2{
+    font-size:clamp(1.8rem, 5vw, 2.6rem);
+    font-weight:700;
+  }
+  .section-head p{
+    color:var(--plum-soft);
+    margin-top:8px;
+    font-size:1.05rem;
+  }
+  /* ---------- SCATTERED GRID (notes + photos + videos) ---------- */
+  .scatter{
+    columns:3 260px;
+    column-gap:22px;
+    padding-bottom:40px;
+  }
+  @media (max-width:640px){
+    .scatter{columns:1 260px;}
+  }
+  .tile{
+    break-inside:avoid;
+    margin:0 0 22px;
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    animation:bob 6s ease-in-out infinite;
+    transition:transform 0.25s ease;
+  }
+  .tile:hover{ transform:translateY(-4px) scale(1.015); }
+  .tile:nth-child(3n){ animation-delay:0.3s; }
+  .tile:nth-child(3n+1){ animation-delay:1.1s; }
+  .tile:nth-child(5n){ animation-delay:2s; }
+  @keyframes bob{
+    0%,100%{ transform:translateY(0) rotate(var(--rot,0deg)); }
+    50%{ transform:translateY(-9px) rotate(var(--rot,0deg)); }
+  }
+  .tile.note{ animation:none; } /* notes stay put, only photos/video float */
+  .tile img, .tile video{
+    width:100%;
+    display:block;
+    border-radius:18px;
+  }
+  .tile.rot-a{ --rot:-3deg; transform:rotate(-3deg); }
+  .tile.rot-b{ --rot:2.5deg; transform:rotate(2.5deg); }
+  .tile.rot-c{ --rot:-1.5deg; transform:rotate(-1.5deg); }
+  .tile.rot-d{ --rot:3deg; transform:rotate(3deg); }
+
+  /* envelope note card */
+  .envelope{
+    background:linear-gradient(160deg, var(--pink-mid), var(--pink-deep));
+    border-radius:18px;
+    padding:26px 18px;
+    text-align:center;
+    cursor:pointer;
+    color:var(--white);
+    position:relative;
+    border:none;
+    width:100%;
+    font-family:'Quicksand',sans-serif;
+  }
+  .envelope .flap{
+    font-size:2rem;
+    margin-bottom:8px;
+  }
+  .envelope .label{
+    font-family:'Baloo 2',cursive;
+    font-size:1.05rem;
+    font-weight:700;
+  }
+  .envelope .tap{
+    font-size:0.8rem;
+    opacity:0.85;
+    margin-top:6px;
+  }
+  .envelope:focus-visible{ outline:3px solid var(--gold); outline-offset:3px; }
+
+  /* video tile */
+  .video-tile{ position:relative; cursor:pointer; }
+  .video-tile .poster-label{
+    position:absolute;
+    inset:auto 0 0 0;
+    text-align:center;
+    color:var(--white);
+    font-family:'Baloo 2',cursive;
+    font-size:0.95rem;
+    padding:8px;
+    background:linear-gradient(transparent, rgba(0,0,0,0.35));
+    border-radius:0 0 18px 18px;
+  }
+  .video-tile video{ background:#000; }
+
+  /* photo tile */
+  .photo-tile{ cursor:pointer; overflow:hidden; }
+  .photo-tile img{ transition:transform 0.4s ease; }
+  .photo-tile:hover img{ transform:scale(1.06); }
+
+  /* ---------- LIGHTBOX / NOTE MODAL ---------- */
+.overlay{
+  position:fixed;
+  top:0; left:0; right:0; bottom:0;
+  width:100vw;
+  height:100vh;
+  background:rgba(91,44,74,0.55);
+  backdrop-filter:blur(2px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  z-index:100;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.25s ease;
+}
+.overlay.open{ opacity:1; pointer-events:auto; }
+.modal-card{
+  background:var(--white);
+  border-radius:22px;
+  max-width:440px;
+  width:100%;
+  max-height:80vh;
+  overflow-y:auto;
+  padding:38px 30px;
+  text-align:center;
+  position:relative;
+  transform:scale(0.92) translateY(10px);
+  transition:transform 0.25s ease;
+  box-shadow:0 24px 60px rgba(91,44,74,0.3);
+}
+.overlay.open .modal-card{ transform:scale(1) translateY(0); }
+.modal-card.photo{
+  max-width:none;
+  width:auto;
+  max-height:none;
+  overflow:visible;
+  padding:0;
+  background:transparent;
+  box-shadow:none;
+}
+  .overlay.open .modal-card{ transform:scale(1) translateY(0); }
+  .modal-card .quote-mark{
+    font-family:'Baloo 2',cursive;
+    font-size:2.6rem;
+    color:var(--pink-mid);
+    line-height:1;
+  }
+  .modal-card p.note-text{
+    text-align: left;
+    white-space: pre-line;
+  }
+  .modal-card .close-btn{
+    position:absolute;
+    top:14px; right:16px;
+    background:var(--pink-soft);
+    border:none;
+    width:32px; height:32px;
+    border-radius:50%;
+    color:var(--plum);
+    font-size:1.1rem;
+    cursor:pointer;
+    line-height:1;
+  }
+  .modal-img{
+    max-width: 92vw;
+    max-height: 88vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 16px;
+    display: block;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    text-align:center;
+    padding:60px 24px 80px;
+    color:var(--plum-soft);
+  }
+  footer .big{
+    font-family:'Baloo 2',cursive;
+    font-size:1.7rem;
+    color:var(--pink-deep);
+    margin-bottom:6px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; }
+  }
+  .music-player{
+  position:fixed;
+  bottom:24px;
+  right:24px;
+  width:150px;
+  background:var(--white);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  padding:14px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  z-index:50;
+}
+.vinyl{
+  width:46px; height:46px;
+  border-radius:50%;
+  background:radial-gradient(circle, var(--plum) 0 6px, var(--pink-deep) 7px 60%, var(--plum) 61% 64%, var(--pink-deep) 65%);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.2rem;
+  flex-shrink:0;
+  animation:spin 3.5s linear infinite;
+  animation-play-state:paused;
+}
+.vinyl.spinning{ animation-play-state:running; }
+@keyframes spin{ from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+.player-info{ flex:1; min-width:0; }
+.track-name{
+  font-size:0.75rem;
+  color:var(--plum-soft);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  margin-bottom:6px;
+}
+.player-controls{ display:flex; gap:8px; }
+.player-controls button{
+  border:none;
+  background:var(--pink-soft);
+  color:var(--plum);
+  width:30px; height:30px;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:0.9rem;
+}
+.player-controls button:hover{ background:var(--pink-mid); color:var(--white); }
+.volume-slider{
+  width:100%;
+  margin-top:8px;
+  height:4px;
+  -webkit-appearance:none;
+  appearance:none;
+  background:var(--pink-soft);
+  border-radius:4px;
+  outline:none;
+  cursor:pointer;
+}
+.volume-slider::-webkit-slider-thumb{
+  -webkit-appearance:none;
+  appearance:none;
+  width:13px;
+  height:13px;
+  border-radius:50%;
+  background:var(--pink-deep);
+  cursor:pointer;
+}
+.volume-slider::-moz-range-thumb{
+  width:13px;
+  height:13px;
+  border:none;
+  border-radius:50%;
+  background:var(--pink-deep);
+  cursor:pointer;
+}
+@media (max-width:480px){
+  .music-player{ bottom:14px; right:14px; width:130px; padding:10px; }
+}
+</style>
+</head>
+<body>
+<div class="music-player" id="musicPlayer">
+  <div class="vinyl" id="vinyl">🎵</div>
+  <div class="player-info">
+    <div class="music-player" id="musicPlayer">
+  <div class="vinyl" id="vinyl">🎵</div>
+  <div class="player-info">
+    <div class="track-name" id="trackName">Tap play</div>
+    <div class="player-controls">
+      <button id="shuffleBtn" aria-label="Shuffle">🔀</button>
+      <button id="playBtn" aria-label="Play">▶</button>
+    </div>
+    <input type="range" id="volumeSlider" min="0" max="100" value="70" class="volume-slider" aria-label="Volume">
+  </div>
+</div>
+  </div>
+</div>
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div id="petals"></div>
+  <p class="hero-eyebrow">a little message from the heart, just for you</p>
+  <h1>Happy Birthday<span>LOVELOVEKO</span></h1>
+  <p class="sub">17 little moments to celebrate your birthday with your age 💗</p>
+  <div class="scroll-hint">tanawa ang secret hehe ↓</div>
+</section>
+
+<!-- ============ NOTES + PHOTOS + VIDEOS ============ -->
+<section class="section" id="notes">
+  <div class="section-head">
+    <h2>Open whenever you'd like</h2>
+    <p>Tap an envelope for a note, a photo to see it bigger, or a video to press play.</p>
+  </div>
+
+  <div class="scatter" id="scatter"></div>
+</section>
+
+<footer>
+  <div class="big">Happy Birthday, Rhain 🎂</div>
+  <p>Made with love, just for you. I'm sorry I haven't able to prepare a  long message for you. However all of these with a total of 594 lines of code are meant to combine to showcase how  these people see and love you. May this be a  message to be delivered not just to be submitted, but a heartfelt emotions just for you existing for a 17th year in the world. I love you Loveeee Always</p>
+</footer>
+
+<!-- ============ MODAL ============ -->
+<div class="overlay" id="overlay">
+  <div class="modal-card" id="modalCard">
+    <button class="close-btn" id="closeModal" aria-label="Close">✕</button>
+    <div id="modalInner"></div>
+  </div>
+</div>
+
+<script>
+/* ---------------- CONTENT: edit these freely ---------------- */
+const notes = [
+  "Happy birthday to the person who makes ordinary days feel like something worth remembering. -Veynz",
+  "happy happy birthday rinhaartt! as you step into this next journey, i hope you know how much of an impact you were and still aree in my life. whenever i was going through something, you were always there to give me the best advice. i honestly admire how high your emotional intelligence is. you never made me feel ashamed or stupid, you were simply there, giving me what i needed to hear. sometimes, it makes me wonder how much you’ve been through to have gained that much wisdom. whatever happened before, with all the libaks and misunderstandings, i know it affected you so much :(( i genuinely hope you heal from it rhaain. now that you’re entering the next chapter of your lifee, i sincerely wish nothing but the best for youu. i am so, so proud of how much you’ve achieved and of where you are now. i know you went through so much to get to where you are today, and i want you to know that i will always be proud of youu. \n\ni hope you continue to be youu, rhain. we may still have misunderstandings and disagreements in the future, but always remember that i will always be here for you just like how you’ve always been there for me. thank you for everythingg, rhainn. HAPPY HAPPY BIRTHDAY! I LOVE YOUU \n-From your beloved Belle",
+  "I hope this year hands you exactly the kind of soft, easy joy you give everyone else.",
+  "HAPPY BIRTHDAY RHAINNN, ENJOY YOUR DAY TODAYY More blessings to come po, padayon sa pagpalangga saimong kaugalingon ug sakong migo heheheh.  HAPPY BIRTHDAY \n\n-from Amir",
+  "HAPPY BIRTHDAY, RHAINNN!!!\n\nLABLAB SO MUCH!! 🫶🏻\n\nSus, bisan og mas magulang ko sa imoha, murag feel jud nako nga mas ate ka because of the way you act as a person.\n\nRhain, thank you for being youuu! i love how u don't hide what u truly feel towards a person. I love how true u are to everyone. Bisag og suko ka, suko jud kaayo ka HAHAHAHA Ik u're known for being maldita, pero dili man ka magmaldita for no reason, kasabot man pud ko permi sa imong reasons. zoo yeazzz if there are some people nga dili ganahan sa imoha, don't mind them—mind me nalang kay ganahan ko nimo🥰 yieieieie HAHAHHAHAHA\n\nbitaw, thank youuu so much for being by my side whenever I need you. thank you for pushing me to do the things I need to do and the things that are good for myself.\n\nNGL, Rhain, mura jud kag mama ay, peroo in a good wayyy. the way you protect us, the way you remind us, and the way you simply act towards us are some of the things that make u zoo beautiful and uniquee. but I hope nga when ikaw nasad ang naay need, dili ka maghesitate to ask me/us for helpp. i'm always willing to help youuu. ik, Rhain, nga u have a good heart and good intentions. ik you are a good person. For real ni, habb, dili ko gajoke. \n\nalways remember nga u don't have to do everything on ur own kay naa ra mi diri for you, just like how u've always been there for usss. amping permi, and don't forget to take care of urself pud hab? u deserve to be happy and loved, not just today but every dayyy yeyy. enjoy your day, Rhainnn!!  Basta, thank youuu for being youuu!\n\nAgain, HAPPY HAPPY BIRTHDAY, RHAIN!!! LABLAB KA NAMINN!! 🫶🏻\n\n-Jay",
+  "You have this quiet way of making people feel safe. I notice it. I love it about you.",
+  "Happyy Birthdayyy isa sa ipanka maldita na buotan na ambot dli masabot na Senior Citizen este Senior nako sa pub ate Rhain, Happy Birthdayy sayuu!!! I genuinely wish you nothing but the best in life atee. May your days be filled with happiness, memories, and countless moments with your family and, of course, with Kuya Veynzz. Yieee! Stay strong kayooo! HAHAHA. 🫶🏻 Btw, Ate, it’s really sad nga you’re no longer joining RSPC this time. But please know nga kasama ka gihapon sa laban—not physically, but spiritually. Walangg iiwan sa familyangch too—  Kasama ka sa laban nila Kuya Veynz ug sa among tanan. \n\nJokee time ta diay tong ana ko dli nako mo dayun RS kay wala ni sugot Ma’am Necyy avout itt— and as we prepare for this rs atee,  I will chat youu haa then you critic me..  “Bati imong tingog, Carl. Pinugos.” that exact words atee gi carry nakoo with no harm feelingg, harm overr.. perp likee its sounded harsh sa uban pero  for me, I chose to take it differently. Instead of letting it bring me down, I turned it into a motivation and ni workk sya atee… I received so much feedback about my performance this ds atee, and even Ate Hannah told me nga ganahan siya sa akong performance. So, somehow, that one harsh line from you became one of the reasons I pushed myself to improve. And yeszz, ikaw gihapon akong number one basher…lubos-lubos natoo atechh I take this as a chance to    say everything and yezz sa mga mavuting ginawaa mo sakinn…from helping mee realizee kung tama batong pinasok koo and sooo marami din naman akong nakuhaa sa inyoo ni kuya veynzz dahil sa inyo lang man din ako nag chichika ng ganitooo yeaa because kayuu ang alam kongg matured enough na makakaintindii sakenn.. \n\nAnywayz, Ateee, I wish you nothing but the best in life. May this new chapter sa imong life brings you genuine happiness, endless love, chada na opportunities sa futuree, and countless blessings gikan kay  Lord. May He continue to guide you, protect you, and bless you and your family in everything you do. HAPPY BIRTHDAYYY ATEE!!! \n-from Carl",
+  "Thank you for existing in the specific, particular way that you do. The world is better calibrated with you in it.",
+  "You're someone's favorite person. Today, let it be obvious that it's mine too.",
+  "Nais kong ipaabot sa iyo ang aking mainit na pagbati para sa iyong kaarawan. Maligayang kaarawan sa isa sa mga pinakamamahal kong junior, Rhain!\n\nGusto kong malaman mo kung gaano ako nagpapasalamat dahil naging parte ka ng aking buhay, lalong-lalo na sa aking paglalakbay bilang isang estudyanteng mamamahayag at lider. Isa ka sa mga taong nagpakita ng galing, lakas at katatagan sa kahit ano mang hamon na dumating sa iyo, at isa sa mga taong mapapagkatiwalaan, personal man o propesyonal. Alam ko na malaki ang iyong panghihinayang sa naging resulta ng nakaraang DSPC, ngunit sana ay mapagtanto mo na hindi ito sukatan ng iyong husay at galing bilang isang manunulat at mamamahayag. Nawa ay hindi dito magtapos ang iyong papel bilang isang mamamahayag at patuloy mong ibahagi ang iyong kaalaman at opinyon sa pamamagitan ng pagsusulat.\n\nSana ay pahalagahan mo ang mga araw mong pananatili sa high school, dahil ibang-iba na ang buhay kolehiyo. Bumuo ka ng mga alaala kasama ang iyong mga kaibigan, maging aktibo ka sa mga gawain, at maglaan ka ng oras para sa mga taong malapit sa iyong puso. Bilang iyong ate, nais kong malaman mo na palagi akong nakasuporta at handang gumabay sa ano mang gusto mong tahakin sa buhay. Narito lamang ako kung kailangan mo ng taong magiging kasangga mo at mapagkatitiwalaan mo.\n\nDalangin ko na patuloy kang pagpalain ng Panginoon, at sana ay hindi mawala ang iyong paniniwala na may mga magagandang bagay na nakalaan sa iyo. Nawa ay sa araw na ito, malaman mo kung gaano karaming tao ang nagmamahal sa iyo, at hindi ka nag-iisa sa mga pagsubok na pinagdaraanan mo.\n\nMuli, maligayang kaarawan.\n\nNagmamahal, ate Syotie!❤️🌸",
+  "Happy birthday to someone who is loved far more than she probably realizes.",
+  "Rhain heart!!! Before anything elseee, HAPPY BIRTHDAY! Welcome to your last year before legalityy, dancing queen yarn HAHAHAHAH charet. Anywaysss, it’s been a while na noh? I’ve only known you before as an acquaintance within BKD which grew to “rhain with her crinkles”, and of course as time went by, our friendship also grew, especially during those after class hugs during 11th grade. As I got to know you more, despite you being more younger than me, you have inspired me in ways that help me grew. You are the type of person who was so brave and courageous in stepping up, in moments full of chaos you were the one who would buffer it up, defending what was needed to be defended, taking in all the works that were needed to be attended to, and most especially stepping up for others when they were fearful in stepping up for themselves. Know that through these things you have inspired many, including me— someone who had never ever had the guts to even defend herself, and in spite of that I found a friend. Rhain heaart, know that you matter so much to so many people, including me, and know that if ever the road gets rough on your side, know that we are also here to help you get through, just as you have helped is get through chaotic paths. Once again happy birthday, and I pray nothing but all the best things that life has to offer sa imo. Godbless ikaw always and I LOVE YOU SOOOO MUCHHHH MWAAAAPS. \n-from Reph",
+  "HAPPY 17TH BIRTHDAY, ATE RHAINNN!! ❤️‍🩹\n\nI honestly don’t know how to put everything I want to say into words, but I hope this little letter reminds you of how much you mean to me.\n\nI’m really, really proud of you. Especially in journalism, I’ve seen how much effort you put into everything you do. I know there are times when you get tired, stressed, or maybe even doubt yourself, but you still keep going. And that’s something I will always admire about you. You may not always see how far you’ve come, but I do, and I hope you know that.\n\nI also admire how dedicated you are to your academics and to the organizations you’re part of. You give your time and your energy to so many things, and you always try to do your best. Sometimes I wonder how you manage everything, but I guess that’s just you being you.\n\nAs you turn 17, I hope you don’t forget to be proud of yourself too. You’ve already come so far, and there’s still so much waiting for you. Don’t be too hard on yourself when things don’t go the way you want. It’s okay to get tired, to make mistakes, and to take a break. You don’t always have to be strong.\n\nAnd if there ever comes a time when you feel like you’re not doing enough, I hope you remember that someone is always proud of you. I am. I’ll always be happy to see you win, and even on the days when you don’t, I’ll still be proud of the person who tried.\n\nI’m really thankful that I got to know you, ate Rhain. You’re someone I genuinely look up to, and I hope you never forget how much you inspire the people around you.\n\nI hope 17 is kind to you. I hope it brings you moments that make your heart full and memories you’ll look back on with a smile. And I hope that somewhere along the way, you realize that you’re already someone worth being proud of.\n\nHappy birthday, ate Rhain!! Keep going, keep dreaming, and please never forget how amazing you are. I’m always proud of you. \n\n- loveloveee, Athenaaa ❤️‍🩹",
+  "Dearest Rhain,\n\nbirthday renharttt 😘 Thank you for being my mama sa school especially during our junior high school era. I hope you continue being you. More birthdays and bakings to come hehe. \n\nEnjoy your day ma, love uuu 🎂 \n\n-your anak Thriz",
+  "To Ate Rhain, the person I never expected to grow this close with, but somehow, life had its own beautiful way of bringing our paths together. Sometimes, the best bonds are the ones we never saw coming. And indeed, life is truly filled with surprises noh? \n\nFirst and foremost, happy birthday, Ate Rhain! I thank the Lord for continuously guiding you throughout your journey. You've walked through different triumphs and hardships, faced challenges that tested your strength, and celebrated achievements that showed just how far you've come. And today, we celebrate not just another year of your life, but the person you are slowly becoming as you continue to enjoy life and follow the path where God is leading you. \n\nI'm genuinely grateful that God destined our paths to cross and allowed us to grow a bond like no other. From our GAMBIT moments to journalism itself, we've shared countless memories that I will forever treasure. (And how could I ever forget that moment nga imoha kong gi comfort the moment you got home from your competition during RSPC) 🥹. That simple gesture spoke volumes about the kind of person you are. You have this heart that naturally cares for others, and somehow, you never fail to put a smile on people's faces, whether through your words, your presence, or simply by being you. 🫂💗\n\nThank you for being an ate not by blood, but by bond. Thank you for every little moment that made our bond stronger than ever. From unexpected beginnings came a friendship I never knew I needed, and I'm truly thankful that I got to know someone as genuine and caring as you. \n\nOnce again, happy birthday, Ate Rhain! May you continue to walk boldly wherever God leads you, embrace every chapter that comes your way, and keep being the kindest and most superior person I know! 🥹🫰🏻\n\nMay God bless you always, Ate, and may the years ahead bring you even more reasons to smile and continue being the brightest person I know.\n\nPadayon sa pagkamaayo, Ate Rhain! Happy birthdayyyyyy mwamwamwa! \n\n- Lablab saimong cute nga junior Rance 🥹😘",
+  "HAPPY HAPPY BIRTHDAY ULANNNN! \n\nTo our pinaka-maldita, daghan yawyaw, and business-minded nga SSLG Treasurer! HAHAHAHAHA 😭Behind all that pagka-maldita nimo I’ll consider na isa sa pinaka understanding ug praktikal nga tawo akong nailhan. Despite sa tanan wala jud ta ever nag away kay feel nako murag maka-gwapa and maka-buotan jud diay ang crinkles HHAHAHAHA Happy kaayo ko nga nakaila tika ug na part sa akong journey rhainnnn!!🫶🏻\n\nI hope you get all the good things you deserve, more blessings, happiness, and success. And syempre MORE MONEY kay business-minded man ta! HAHAHAHAHA\n\nEnjoy your day Ulan! Stay maldita, buotan and practical as always. Love youuu! 🥳💗\n\n-Nino",
+  "Happy birthday, Rhain. I'm so glad your particular year on this earth started when it did."
+];
+const playlist = [
+  { src: 'assets/music/song1.mp3', title: 'Song 1' },
+  { src: 'assets/music/song2.mp3', title: 'Song 2' },
+  { src: 'assets/music/song3.mp3', title: 'Song 3' }
+];
+let shuffledOrder = [], playIndex = 0, isPlaying = false;
+const audio = new Audio();
+audio.volume = 0.7; // starting volume, matches slider default of 70
+document.getElementById('volumeSlider').addEventListener('input', (e) => {
+  audio.volume = e.target.value / 100;
+});
+
+function shuffleArray(arr){
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+function buildShuffledOrder(){ shuffledOrder = shuffleArray(playlist.map((_, i) => i)); playIndex = 0; }
+function loadTrack(i){
+  const track = playlist[shuffledOrder[i]];
+  audio.src = track.src;
+  document.getElementById('trackName').textContent = track.title;
+}
+function playCurrent(){
+  audio.play();
+  isPlaying = true;
+  document.getElementById('vinyl').classList.add('spinning');
+  document.getElementById('playBtn').textContent = '⏸';
+}
+function pauseCurrent(){
+  audio.pause();
+  isPlaying = false;
+  document.getElementById('vinyl').classList.remove('spinning');
+  document.getElementById('playBtn').textContent = '▶';
+}
+buildShuffledOrder();
+loadTrack(playIndex);
+
+document.getElementById('playBtn').addEventListener('click', () => isPlaying ? pauseCurrent() : playCurrent());
+document.getElementById('shuffleBtn').addEventListener('click', () => {
+  buildShuffledOrder();
+  loadTrack(playIndex);
+  if (isPlaying) playCurrent();
+});
+audio.addEventListener('ended', () => {
+  playIndex++;
+  if (playIndex >= shuffledOrder.length) buildShuffledOrder();
+  loadTrack(playIndex);
+  playCurrent();
+});
+const photoCount = 20; // assets/photo1.jpg ... photo20.jpg
+const videoCount = 4;  // assets/video1.mp4 + assets/video1-poster.jpg, etc.
+
+/* ---------------- BUILD THE SCATTERED GRID ---------------- */
+const scatter = document.getElementById('scatter');
+const rotations = ['rot-a','rot-b','rot-c','rot-d'];
+let noteIdx = 0, photoIdx = 0, videoIdx = 0;
+
+// Build an interleaved order: note, photo, note, video, photo, note...
+const items = [];
+while (noteIdx < notes.length || photoIdx < photoCount || videoIdx < videoCount) {
+  if (noteIdx < notes.length) items.push({type:'note', i:noteIdx++});
+  if (photoIdx < photoCount) items.push({type:'photo', i:photoIdx++});
+  if (noteIdx < notes.length) items.push({type:'note', i:noteIdx++});
+  if (videoIdx < videoCount) items.push({type:'video', i:videoIdx++});
+}
+
+items.forEach((item, order) => {
+  const rot = rotations[order % rotations.length];
+  const el = document.createElement('div');
+
+  if (item.type === 'note') {
+    el.className = `tile note ${rot}`;
+    el.innerHTML = `
+      <button class="envelope" data-note="${item.i}">
+        <div class="flap">💌</div>
+        <div class="label">Note ${item.i + 1}</div>
+        <div class="tap">tap to open</div>
+      </button>`;
+  } else if (item.type === 'photo') {
+    el.className = `tile photo-tile ${rot}`;
+    el.innerHTML = `<img src="assets/photo${item.i + 1}.jpg" alt="Photo ${item.i + 1}" data-photo="${item.i + 1}">`;
+  } else if (item.type === 'video') {
+    el.className = `tile video-tile ${rot}`;
+    el.dataset.video = item.i + 1;
+    el.innerHTML = `
+      <img src="assets/video${item.i + 1}-poster.jpg" alt="Video ${item.i + 1} poster">
+      <div class="poster-label">▶ tap to play</div>`;
+  }
+  scatter.appendChild(el);
+});
+
+/* ---------------- MODAL LOGIC ---------------- */
+const overlay = document.getElementById('overlay');
+const modalInner = document.getElementById('modalInner');
+
+function openModal(html, extraClass) {
+  modalInner.innerHTML = html;
+  const card = document.getElementById('modalCard');
+  card.className = 'modal-card' + (extraClass ? ' ' + extraClass : '');
+  overlay.classList.add('open');
+}
+function closeModal() {
+  overlay.classList.remove('open');
+  modalInner.innerHTML = '';
+}
+document.getElementById('closeModal').addEventListener('click', closeModal);
+overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+scatter.addEventListener('click', (e) => {
+  const noteBtn = e.target.closest('[data-note]');
+  const photoImg = e.target.closest('[data-photo]');
+  const videoTile = e.target.closest('.video-tile');
+
+  if (noteBtn) {
+    const i = noteBtn.dataset.note;
+    openModal(`<div class="quote-mark">“</div><p class="note-text">${notes[i]}</p>`);
+  } else if (photoImg) {
+  openModal(`<img class="modal-img" src="assets/photo${photoImg.dataset.photo}.jpg" alt="Photo ${photoImg.dataset.photo}">`, 'photo');
+  } else if (videoTile) {
+    const n = videoTile.dataset.video;
+    videoTile.innerHTML = `
+      <video controls autoplay poster="assets/video${n}-poster.jpg" playsinline>
+        <source src="assets/video${n}.mp4" type="video/mp4">
+      </video>`;
+  }
+});
+
+/* ---------------- FALLING PETALS (hero only, decorative) ---------------- */
+const petalHost = document.getElementById('petals');
+const petalEmojis = ['🌸','💗','✨'];
+for (let p = 0; p < 14; p++) {
+  const span = document.createElement('span');
+  span.className = 'petal';
+  span.textContent = petalEmojis[p % petalEmojis.length];
+  span.style.left = Math.random() * 100 + '%';
+  span.style.animationDuration = (8 + Math.random() * 8) + 's';
+  span.style.animationDelay = (Math.random() * 6) + 's';
+  span.style.fontSize = (1 + Math.random() * 1.2) + 'rem';
+  petalHost.appendChild(span);
+}
+</script>
+</body>
+</html>
